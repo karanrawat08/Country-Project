@@ -1,0 +1,274 @@
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  body {
+    background-color: hsl(207, 21%, 28%);
+	font-family: "Nunito Sans", sans-serif;
+
+  }
+
+  header {
+    width: 100vw;
+    height: 13vh;
+    background-color: hsl(210, 19%, 25%);
+    box-shadow: 10px 6px 15px 0px rgb(29, 28, 28);
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  h1 {
+    font-size: 2rem;
+    padding: 1rem;
+    padding-left: 7rem;
+    /* display: inline-block; */
+  }
+
+  #moon {
+    margin-left: 68rem;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-top: -2rem;
+    font-weight: 700;
+  }
+
+  #moon:hover {
+    cursor: pointer;
+  }
+
+  :root {
+    --clr-primary: #651fff;
+    --clr-gray: #37474f;
+    --clr-gray-light: #b0bec5;
+  }
+
+  * {
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .wrapper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 20rem);
+    justify-content: center;
+    grid-gap: 3rem;
+    justify-content: center;
+    align-content: center;
+    overflow-x: hidden;
+  }
+
+  .container {
+   background-color: hsl(210, 19%, 25%);
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgb(68 68 68 / 20%);
+   }
+ul {
+    list-style-type: none;
+
+  }
+
+  .profile-img {
+    width: 8rem;
+    clip-path: circle(60px at center);
+    margin-top: 4.5rem;
+  }
+
+  .name {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .description {
+    margin: 1rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  input {
+    height: 46px;
+  width: 298px;
+  margin-left: 203px;
+  border-radius: 5px;
+  text-align: center;
+  }
+
+  .Search {
+    background-color: hsl(210, 19%, 25%);
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .container.active {
+    display: none;
+  }
+
+  .container.all {
+    display: none;
+  }
+
+  #back {
+    font-size: 24px;
+    width: 8vw;
+    height: 5vh;
+    margin-left: 2rem;
+    background-color: hsl(210, 19%, 25%);
+    box-shadow: 0px 2px 6px 0px rgb(29 28 28);
+    cursor: pointer;
+    color: white;
+
+  }
+  #backagain{
+    font-size: 24px;
+    width: 8vw;
+    height: 5vh;
+    margin-left: 2rem;
+    background-color: hsl(210, 19%, 25%);
+    box-shadow: 0px 2px 6px 0px rgb(29 28 28);
+    cursor: pointer;
+    color: white;
+    display: none;
+  }
+
+  #filter {
+    margin-left: 79rem;
+    cursor: pointer;
+    background-color: hsl(210, 19%, 25%);
+    color: white;
+  }
+
+  .wrapper.active .option {
+    display: block;
+    margin-left: 79rem;
+    /* cursor: pointer; */
+    background-color: hsl(210, 19%, 25%);
+    width: 9vw;
+  }
+
+  
+  .option {
+    display: none;
+  }
+
+  .option li:hover {
+    background-color: #b3b3b3;
+    cursor: pointer;
+    color: black;
+    font-weight: 600;
+  }
+#filterbtn{
+width: 4vw;
+  margin-left: 88rem;
+  height: 5vh;
+  display: none;
+  background-color: hsl(210, 19%, 25%);
+    box-shadow: 0px 2px 6px 0px rgb(29 28 28);
+color: white;
+cursor: pointer;
+}
+
+
+#imgall{
+width: 320px;
+height:38vh;
+border-radius: 10px;
+cursor: pointer;
+}
+#loading {
+  width: 2rem;
+  height: 2rem;
+  border: 8px solid #f3f3f3;
+  border-top: 7px solid hsl(207, 21%, 28%);
+  border-radius: 100%;
+  margin: auto;
+  display: none;
+  animation: spin 1s infinite linear;
+}
+#loading.display {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin-top: 12rem;
+}
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+.mactive{
+color: black !important;
+background-color: white !important;
+}
+.mactive2{
+    color: white !important;
+background-color: black !important;
+}
+.inputt{
+    background-color:var( --clr-gray); 
+}
+  @media screen and (max-width:415px) {
+header{
+      width: 316vw;
+      height: 35vh;
+    }
+
+    h1 {
+      font-size: 5rem;
+      padding-left: 4rem;
+      padding-top: 6rem;
+    }
+
+    #moon {
+      font-size: 3rem;
+      margin-left: 875px;
+      margin-top: -87px;
+    }
+
+    .container {
+      height: 70vh;
+  width: 998px;
+  margin-left: -77px;
+}
+.wrapper-grid {
+      margin-left: 259px;
+  width: 687px;
+    }
+    #imgall{
+      height: 51vh;
+  width: 142vw;
+}
+input{
+height: 12vh;
+  font-size: 98px;
+  width: 254vw;
+  margin-top: 62px;
+  margin-left: 98px;
+}
+ul{
+font-size: 30px;
+}
+#Search{
+margin-left: 1053px;
+  font-size: 88px;
+  position: relative;
+  top: -103px;
+}
+
+#region{
+font-size: 60px;
+  margin-left: -1427px;
+  padding-left: 170px;
+
+}
+.wrapper.active .option {
+margin-left: 25px;
+  display: block;
+  width: 71vw;
+  padding-left: 20px;
+}
+}

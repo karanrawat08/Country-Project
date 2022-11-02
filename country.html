@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+  <title>Rest Countries</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      background-color: hsl(207, 21%, 28%);
+
+    }
+
+    header {
+      width: 100vw;
+      height: 13vh;
+      background-color: hsl(210, 19%, 25%);
+      box-shadow: 10px 6px 15px 0px rgb(29, 28, 28);
+      color: white;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 2rem;
+      padding: 1rem;
+      padding-left: 7rem;
+      /* display: inline-block; */
+    }
+
+    #moon {
+      margin-left: 68rem;
+      font-size: 1rem;
+      padding: 1rem;
+      margin-top: -2rem;
+      font-weight: 700;
+    }
+
+    #moon:hover {
+      cursor: pointer;
+    }
+
+    :root {
+      --clr-primary: #651fff;
+      --clr-gray: #37474f;
+      --clr-gray-light: #b0bec5;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: "Open Sans", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .wrapper-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 20rem);
+      justify-content: center;
+      grid-gap: 3rem;
+      justify-content: center;
+      align-content: center;
+      overflow-x: hidden;
+    }
+
+    .container {
+      /* overflow: hidden; */
+      /* box-shadow: 0px 2px 8px 0px var(--clr-gray-light); */
+      /* background-color: white; */
+      /* text-align: center;
+  border-radius: 1rem;
+  position: relative;
+  margin: 0.5rem; */
+      background-color: hsl(210, 19%, 25%);
+      border-radius: 10px;
+      box-shadow: 2px 2px 2px 2px rgb(68 68 68 / 20%);
+      /* height: 44vh; */
+    }
+
+    ul {
+      list-style-type: none;
+
+    }
+
+    .profile-img {
+      width: 8rem;
+      clip-path: circle(60px at center);
+      margin-top: 4.5rem;
+    }
+
+    .name {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .description {
+      margin: 1rem 2rem;
+      font-size: 0.9rem;
+    }
+
+    input {
+      height: 46px;
+    width: 298px;
+    margin-left: 203px;
+    border-radius: 5px;
+    text-align: center;
+    }
+
+    .Search {
+      background-color: hsl(210, 19%, 25%);
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .container.active {
+      display: none;
+    }
+
+    .container.all {
+      display: none;
+    }
+
+    #back {
+      font-size: 24px;
+      width: 8vw;
+      height: 5vh;
+      margin-left: 2rem;
+      background-color: hsl(210, 19%, 25%);
+      box-shadow: 0px 2px 6px 0px rgb(29 28 28);
+      cursor: pointer;
+      color: white;
+    }
+    #backagain{
+      font-size: 24px;
+      width: 8vw;
+      height: 5vh;
+      margin-left: 2rem;
+      background-color: hsl(210, 19%, 25%);
+      box-shadow: 0px 2px 6px 0px rgb(29 28 28);
+      cursor: pointer;
+      color: white;
+      display: none;
+    }
+
+    #filter {
+      margin-left: 79rem;
+      cursor: pointer;
+      background-color: hsl(210, 19%, 25%);
+      color: white;
+    }
+
+    .wrapper.active .option {
+      display: block;
+      margin-left: 79rem;
+      /* cursor: pointer; */
+      background-color: hsl(210, 19%, 25%);
+      width: 9vw;
+    }
+
+    /* .wrapper .angel{
+  display: block;
+} */
+    .option {
+      display: none;
+    }
+
+    .option li:hover {
+      background-color: #b3b3b3;
+      cursor: pointer;
+      color: black;
+      font-weight: 600;
+    }
+#filterbtn{
+  width: 4vw;
+    margin-left: 88rem;
+    height: 5vh;
+    display: none;
+    background-color: hsl(210, 19%, 25%);
+      box-shadow: 0px 2px 6px 0px rgb(29 28 28);
+color: white;
+cursor: pointer;
+}
+
+/* .imgallplus{
+border:2px solid red;
+} */
+#imgall{
+  width: 320px;
+  height:38vh;
+  border-radius: 10px;
+cursor: pointer;
+}
+#loading {
+    width: 2rem;
+    height: 2rem;
+    border: 8px solid #f3f3f3;
+    border-top: 7px solid hsl(207, 21%, 28%);
+    border-radius: 100%;
+    margin: auto;
+    display: none;
+    animation: spin 1s infinite linear;
+}
+#loading.display {
+    display: block;
+    width: 80px;
+	height: 80px;
+    margin-top: 12rem;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.mactive{
+color: red;
+}
+
+    @media screen and (max-width:415px) {
+header{
+        width: 316vw;
+        height: 35vh;
+      }
+
+      h1 {
+        font-size: 5rem;
+        padding-left: 4rem;
+        padding-top: 6rem;
+      }
+
+      #moon {
+        font-size: 3rem;
+        margin-left: 875px;
+        margin-top: -87px;
+      }
+
+      .container {
+        height: 70vh;
+    width: 998px;
+    margin-left: -77px;
+}
+.wrapper-grid {
+        margin-left: 259px;
+    width: 687px;
+      }
+      #imgall{
+        height: 51vh;
+    width: 142vw;
+}
+input{
+  height: 12vh;
+    font-size: 98px;
+    width: 254vw;
+    margin-top: 62px;
+    margin-left: 98px;
+}
+ul{
+  font-size: 30px;
+}
+#Search{
+  margin-left: 1053px;
+    font-size: 88px;
+    position: relative;
+    top: -103px;
+}
+
+#region{
+  font-size: 60px;
+    margin-left: -1427px;
+    padding-left: 170px;
+
+}
+
+.wrapper.active .option {
+  margin-left: 25px;
+    display: block;
+    width: 71vw;
+    padding-left: 20px;
+}
+    }
+ </style>
+</head>
+
+<body>
+  <header>
+    <span>
+      <h1>Where in the world?
+        <p class="uil uil-moon" id="moon" class="moon" onclick="moon()">&nbsp;Dark Mode</p>
+      </h1>
+    </span>
+  </header><br><br>
+  <button onclick="back()" id="back">Back</button>
+  <button onclick="backagain()" id="backagain">Back</button>
+
+  <input type="text" style="background-color:hsl(210, 19%, 25%); color:white" placeholder="Search For a Country"
+    id="input"><i class="uil uil-search Search" id="Search" onclick="search()"></i><br>
+    <button id="filterbtn" onclick="back2()"   >Back</button>
+  <span id="filter" class="wrapper">
+    <span id="region"><b id="para">Filter by Region:</b><i class="uil uil-angle-down angel"
+        style="background-color:var(--clr-gray-light)"></i>
+      <div class="option">
+      </div>
+    </span>
+  </span>
+  <br><br>
+  <div id="loading"></div>
+
+  <div class="wrapper-grid" id="wrapper">
+
+
+    <div id="container1" class="container"></div>
+    <div id="container2" class="container"></div>
+    <div id="container3" class="container"></div>
+    <div id="container4" class="container"></div>
+    <div id="container5" class="container"></div>
+    <div id="container6" class="container"></div>
+    <div id="container7" class="container"></div>
+    <div id="container8" class="container"></div>
+    <div id="container9" class="container"></div>
+    <div id="container10" class="container"></div>
+    <div id="container11" class="container"></div>
+    <div id="container12" class="container"></div>
+    <div id="container13" class="container"></div>
+    <div id="container14" class="container"></div>
+    <div id="container15" class="container"></div>
+    <div id="container16" class="container"></div>
+    <div id="container17" class="container"></div>
+    <div id="container18" class="container"></div>
+    <div id="container19" class="container"></div>
+    <div id="container20" class="container"></div>
+    <div id="container21" class="container"></div>
+    <div id="container22" class="container"></div>
+    <div id="container23" class="container"></div>
+    <div id="container24" class="container"></div>
+    <div id="container25" class="container"></div>
+    <div id="container26" class="container"></div>
+    <div id="container27" class="container"></div>
+    <div id="container28" class="container"></div>
+    <div id="container29" class="container"></div>
+    <div id="container30" class="container"></div>
+    <div id="container31" class="container"></div>
+    <div id="container32" class="container"></div>
+    <div id="container33" class="container"></div>
+    <div id="container34" class="container"></div>
+    <div id="container35" class="container"></div>
+    <div id="container36" class="container"></div>
+    <div id="container37" class="container"></div>
+    <div id="container38" class="container"></div>
+    <div id="container39" class="container"></div>
+    <div id="container40" class="container"></div>
+    <div id="container41" class="container"></div>
+    <div id="container42" class="container"></div>
+    <div id="container43" class="container"></div>
+    <div id="container44" class="container"></div>
+    <div id="container45" class="container"></div>
+    <div id="container46" class="container"></div>
+    <div id="container47" class="container"></div>
+    <div id="container48" class="container"></div>
+    <div id="container49" class="container"></div>
+    <div id="container50" class="container"></div>
+    <div id="container51" class="container"></div>
+    <div id="container52" class="container"></div>
+    <div id="container53" class="container"></div>
+    <div id="container54" class="container"></div>
+    <div id="container55" class="container"></div>
+    <div id="container56" class="container"></div>
+    <div id="container57" class="container"></div>
+    <div id="container58" class="container"></div>
+    <div id="container59" class="container"></div>
+    <div id="container60" class="container"></div>
+    <div id="container61" class="container"></div>
+    <div id="container62" class="container"></div>
+    <div id="container63" class="container"></div>
+    <div id="container64" class="container"></div>
+    <div id="container65" class="container"></div>
+    <div id="container66" class="container"></div>
+    <div id="container67" class="container"></div>
+    <div id="container68" class="container"></div>
+    <div id="container69" class="container"></div>
+    <div id="container70" class="container"></div>
+    <div id="container71" class="container"></div>
+    <div id="container72" class="container"></div>
+    <div id="container73" class="container"></div>
+    <div id="container74" class="container"></div>
+    <div id="container75" class="container"></div>
+    <div id="container76" class="container"></div>
+    <div id="container77" class="container"></div>
+    <div id="container78" class="container"></div>
+    <div id="container79" class="container"></div>
+    <div id="container80" class="container"></div>
+    <div id="container81" class="container"></div>
+    <div id="container82" class="container"></div>
+    <div id="container83" class="container"></div>
+    <div id="container84" class="container"></div>
+    <div id="container85" class="container"></div>
+    <div id="container86" class="container"></div>
+    <div id="container87" class="container"></div>
+    <div id="container88" class="container"></div>
+    <div id="container89" class="container"></div>
+    <div id="container90" class="container"></div>
+    <div id="container91" class="container"></div>
+    <div id="container92" class="container"></div>
+    <div id="container93" class="container"></div>
+    <div id="container94" class="container"></div>
+    <div id="container95" class="container"></div>
+    <div id="container96" class="container"></div>
+    <div id="container97" class="container"></div>
+    <div id="container98" class="container"></div>
+    <div id="container99" class="container"></div>
+    <div id="container100" class="container"></div>
+    <div id="container101" class="container"></div>
+    <div id="container102" class="container"></div>
+    <div id="container103" class="container"></div>
+    <div id="container104" class="container"></div>
+    <div id="container105" class="container"></div>
+    <div id="container106" class="container"></div>
+    <div id="container107" class="container"></div>
+    <div id="container108" class="container"></div>
+    <div id="container109" class="container"></div>
+    <div id="container110" class="container"></div>
+    <div id="container111" class="container"></div>
+    <div id="container112" class="container"></div>
+    <div id="container113" class="container"></div>
+    <div id="container114" class="container"></div>
+    <div id="container115" class="container"></div>
+    <div id="container116" class="container"></div>
+    <div id="container117" class="container"></div>
+    <div id="container118" class="container"></div>
+    <div id="container119" class="container"></div>
+    <div id="container120" class="container"></div>
+    <div id="container121" class="container"></div>
+    <div id="container122" class="container"></div>
+    <div id="container123" class="container"></div>
+    <div id="container124" class="container"></div>
+    <div id="container125" class="container"></div>
+    <div id="container126" class="container"></div>
+    <div id="container127" class="container"></div>
+    <div id="container128" class="container"></div>
+    <div id="container129" class="container"></div>
+    <div id="container130" class="container"></div>
+    <div id="container131" class="container"></div>
+    <div id="container132" class="container"></div>
+    <div id="container133" class="container"></div>
+    <div id="container134" class="container"></div>
+    <div id="container135" class="container"></div>
+    <div id="container136" class="container"></div>
+    <div id="container137" class="container"></div>
+    <div id="container138" class="container"></div>
+    <div id="container139" class="container"></div>
+    <div id="container140" class="container"></div>
+    <div id="container141" class="container"></div>
+    <div id="container142" class="container"></div>
+    <div id="container143" class="container"></div>
+    <div id="container144" class="container"></div>
+    <div id="container145" class="container"></div>
+    <div id="container146" class="container"></div>
+    <div id="container147" class="container"></div>
+    <div id="container148"  class="container"></div>
+    <div id="container149" class="container"></div>
+    <div id="container150" class="container"></div>
+    <div id="container151" class="container"></div>
+    <div id="container152" class="container"></div>
+    <div id="container153" class="container"></div>
+    <div id="container154" class="container"></div>
+    <div id="container155" class="container"></div>
+    <div id="container156" class="container"></div>
+    <div id="container157" class="container"></div>
+    <div id="container158" class="container"></div>
+    <div id="container159" class="container"></div>
+    <div id="container160" class="container"></div>
+    <div id="container161" class="container"></div>
+    <div id="container162"  class="container"></div>
+    <div id="container163"  class="container"></div>
+    <div id="container164"  class="container"></div>
+    <div id="container165"  class="container"></div>
+    <div id="container166"  class="container"></div>
+    <div id="container167"  class="container"></div>
+    <div id="container168"  class="container"></div>
+    <div id="container169"  class="container"></div>
+    <div id="container170"  class="container"></div>
+    <div id="container171"  class="container"></div>
+    <div id="container172"  class="container"></div>
+    <div id="container173"  class="container"></div>
+    <div id="container174"  class="container"></div>
+    <div id="container175"  class="container"></div>
+    <div id="container176"  class="container"></div>
+    <div id="container177"  class="container"></div>
+    <div id="container178"  class="container"></div>
+    <div id="container179"  class="container"></div>
+    <div id="container180"  class="container"></div>
+    <div id="container181"  class="container"></div>
+    <div id="container182"  class="container"></div>
+    <div id="container183"  class="container"></div>
+    <div id="container184"  class="container"></div>
+    <div id="container185"  class="container"></div>
+    <div id="container186"  class="container"></div>
+    <div id="container187"  class="container"></div>
+    <div id="container188"  class="container"></div>
+    <div id="container189"  class="container"></div>
+    <div id="container190"  class="container"></div>
+    <div id="container191"  class="container"></div>
+    <div id="container192"  class="container"></div>
+    <div id="container193"  class="container"></div>
+    <div id="container194"  class="container"></div>
+    <div id="container195"  class="container"></div>
+    <div id="container196"  class="container"></div>
+    <div id="container197"  class="container"></div>
+    <div id="container198"  class="container"></div>
+    <div id="container199"  class="container"></div>
+    <div id="container200"  class="container"></div>
+    <div id="container201"  class="container"></div>
+    <div id="container202"  class="container"></div>
+    <div id="container203"  class="container"></div>
+    <div id="container204"  class="container"></div>
+    <div id="container205"  class="container"></div>
+    <div id="container206"  class="container"></div>
+    <div id="container207"  class="container"></div>
+    <div id="container208"  class="container"></div>
+    <div id="container209"  class="container"></div>
+    <div id="container210"  class="container"></div>
+    <div id="container211" class="container"></div>
+    <div id="container212" class="container"></div>
+    <div id="container213" class="container"></div>
+    <div id="container214" class="container"></div>
+    <div id="container215" class="container"></div>
+    <div id="container216" class="container"></div>
+    <div id="container217" class="container"></div>
+    <div id="container218" class="container"></div>
+    <div id="container219" class="container"></div>
+    <div id="container220" class="container"></div>
+    <div id="container221" class="container"></div>
+    <div id="container222" class="container"></div>
+    <div id="container223" class="container"></div>
+    <div id="container224" class="container"></div>
+    <div id="container225" class="container"></div>
+    <div id="container226" class="container"></div>
+    <div id="container227" class="container"></div>
+    <div id="container228" class="container"></div>
+    <div id="container229" class="container"></div>
+    <div id="container230" class="container"></div>
+    <div id="container231" class="container"></div>
+    <div id="container232" class="container"></div>
+    <div id="container233" class="container"></div>
+    <div id="container234" class="container"></div>
+    <div id="container235" class="container"></div>
+    <div id="container236" class="container"></div>
+    <div id="container237" class="container"></div>
+    <div id="container238" class="container"></div>
+    <div id="container239" class="container"></div>
+    <div id="container240" class="container"></div>
+    <div id="container241" class="container"></div>
+    <div id="container242" class="container"></div>
+    <div id="container243" class="container"></div>
+    <div id="container244" class="container"></div>
+    <div id="container245" class="container"></div>
+    <div id="container246" class="container"></div>
+    <div id="container247" class="container"></div>
+    <div id="container248" class="container"></div>
+    <div id="container249" class="container"></div>
+    <div id="container250" class="container"></div>
+
+
+  </div>
+</body>
+<script>
+  // function time(){
+  // body.innerHTML=`Hello`;
+
+  // }
+  //   setTimeout(time(),4000)
+  const loader = document.querySelector("#loading");
+
+//   function displayLoading() {
+//     loader.classList.add("display");
+//     // to stop loading after some time
+//     setTimeout(() => {
+//         loader.classList.remove("display");
+//     },2000);
+// }
+  let moonelem = document.getElementById("moon");
+  function getdata() {
+  // displayLoading();
+   loader.classList.add("display");
+
+    url = 'https://restcountries.com/v3.1/all';
+    fetch(url).then((response) => {
+
+      return response.json();
+    }).then((data) => {
+      datastore = data;
+      console.log(data);
+      console.log(data[0]);
+      console.log(data[0].flags.png);
+      // console.log(data[0].borders[0]);
+      console.log(data[0].name.nativeName.isl);
+      loader.classList.remove("display");
+ for (let index = 1; index<=250; index++) {
+
+        document.getElementById(`container${index}`).innerHTML = `<img src="${data[index].flags.png}" class="imgall${index}" id=imgall><br>
+    <p class="name${index}" id="pid" style="color:white;font-size: 2rem;font-weight:700";
+    font-weight: 600;">${data[index].name.common}</p><br><br>
+    <ul style="color:white;" class="list${index}"><li><b>Population:<b>${data[index].population}</li><li>Region:${data[index].region}</li><li>Capital:${data[index].capital}</li></ul>`
+      document.getElementById(`container${index}`).onclick=function(){document.getElementById('wrapper').style.visibility = 'hidden';
+      
+      document.getElementById(`container${index}`).setAttribute(
+          "style", " visibility:visible; position:absolute;margin-left:2rem;background-color:hsl(207,21%,28%");
+          store=index;
+          document.getElementById(`container${index}`).innerHTML = `<img src="${data[index].flags.png}" class="imgall${index}" id=imgall><br>
+    <p class="name${index}" id="pid" style="color:white;font-size: 2rem;font-weight:700";
+    font-weight: 600;">${data[index].name.common}</p><br><br>
+    <ul style="color:white;" class="list${index}"><li><b Style="color:black;font-weight:800">Population: </b>${data[index].population}</li><br><li><b Style="color:black;font-weight:800">Region:</b> ${data[index].region}</li><br><li><b Style="color:black;font-weight:800">Capital:</b> ${data[index].capital}</li><br>
+      <li><b Style="color:black;font-weight:800">Independent:</b> ${data[index].independent}</li>
+      </ul><ul style="color:white;" class="more${index}"><li><b Style="color:black;font-weight:800">Subregion: </b>${data[index].subregion}</li><br><li><b Style="color:black;font-weight:800">Continents: </b>${data[index].continents}</li><br><li><b Style="color:black;font-weight:800">Landlocked:</b> ${data[index].landlocked}</li></ul>
+      <button id='btn${index}' ><a style="color: inherit;text-decoration: none" href="${data[index].maps.googleMaps}" target="blank">Check in Map</button>
+`
+document.getElementById('wrapper').setAttribute(
+          "style", "height:20vh;width:30vw");
+        document.querySelector(`.imgall${index}`).setAttribute(
+          "style", "    height: 50vh; width: 33vw;");
+          document.querySelector(`.name${index}`).setAttribute(
+          "style", "margin-left: 36rem;color:white;font-size: -11rem;margin-top:-24rem;font-weight: 700;font-size: 2rem;");
+          document.querySelector(`.list${index}`).setAttribute(
+          "style", "margin-left: 36rem;color: white;");
+          document.querySelector(`.more${index}`).setAttribute(
+          "style", "margin-top: -7rem;margin-left: 52rem;color: white;");
+          document.querySelector(`#btn${index}`).setAttribute(
+          "style", "height: 8vh;margin-left: 42rem;margin-top: 3rem;width: 15vw;font-size: 2rem;background-color: #0079c1;color: white;border-radius: 20px;font-weight: 600;");
+document.getElementById('input').style.display = "none";
+document.getElementById('Search').style.display = "none";
+        document.getElementById("backagain").style.display = 'block';
+document.getElementById('back').style.display='none';
+        
+};
+    
+    }
+    })
+  
+  }
+ 
+  function backagain(){
+    document.getElementById(`container${store}`).innerHTML = `<img src="${datastore[store].flags.png}" class="imgall${store}" id=imgall><br>
+    <p class="name${store}" id="pid" style="color:white;font-size: 2rem;font-weight:700";
+    font-weight: 600;">${datastore[store].name.common}</p><br><br>
+    <ul style="color:white;" class="list${store}"><li><b>Population:<b>${datastore[store].population}</li><li>Region:${datastore[store].region}</li><li>Capital:${datastore[store].capital}</li></ul>`
+      document.getElementById('wrapper').removeAttribute(
+          "style", "height:20vh;width:30vw");
+    document.getElementById('wrapper').style.visibility = 'visible';
+    document.getElementById(`container${store}`).removeAttribute("style", " visibility:visible; position:absolute;margin-left:2rem");
+    document.getElementById('input').style.display = "block";
+    document.getElementById('Search').setAttribute(
+      "style", "display:block; position:absolute;margin-left:12rem;margin-top:-2rem");
+    document.getElementById("backagain").style.display = 'none';
+    document.querySelector(`.imgall${store}`).removeAttribute(
+          "style", "height: 55vh; width: 33vw;");
+          // document.querySelector(`.name${store}`).setAttribute(
+          // "style", "color:white");
+          document.querySelector(`.name${store}`).removeAttribute(
+          "style", "margin-left:36rem;font-size:-11rem;margin-top:-24rem;font-weight: 700;font-size: 2rem;");
+          document.querySelector(`.name${store}`).setAttribute(
+          "style", "color:white;font-size: 2rem;font-weight:700");
+          document.querySelector(`.list${store}`).removeAttribute(
+          "style", "margin-left: 36rem");
+          document.querySelector(`.list${store}`).setAttribute(
+          "style", "color:white");
+          document.querySelector(`.more${index}`).removeAttribute(
+          "style", "margin-top: -7rem;margin-left: 52rem;color: white;");
+        
+
+  }
+  function filter() {
+    let country = ["Asia", 'Europe', 'Americas', 'Oceania', 'Africa'];
+    let option = document.querySelector('.option');
+
+    country.forEach(element => {
+      let li = `<br><li style="list-style: none;overflow:hidden" onclick="update(this)" >${element}</li>`
+      option.insertAdjacentHTML('beforeend', li);
+
+    });
+let wrapper = document.querySelector(".wrapper");
+    let selectbtn = document.querySelector('#region')
+    selectbtn.addEventListener("click", () => {
+      wrapper.classList.toggle('active');
+    });
+  }
+  document.getElementById("back").style.display = 'none';
+  getdata();
+  filter();
+  function search() {
+    let input = document.getElementById('input');
+    let container = document.querySelector('.container');
+    for (let k = 1; k <=212; k++) {
+      if (input.value === `${datastore[k].name.common}`) {
+        ka = k;
+        document.getElementById('wrapper').style.visibility = 'hidden';
+        // alert(`${input.value} Found`);
+        document.getElementById(`container${k}`).style.visibility = 'visible';
+        document.getElementById(`container${k}`).setAttribute(
+          "style", " visibility:visible; position:absolute;margin-left:2rem");
+        input.value = "";
+        document.getElementById('input').style.display = "none";
+        document.getElementById('Search').style.display = "none";
+        document.getElementById("back").style.display = 'block';
+    }
+    // else{
+    //   alert('not found');
+    //   break;
+    // }
+}
+    // alert(`Sorry! ${input.value} is not there in our country list.`);
+}
+  function back() {
+    document.getElementById('wrapper').style.visibility = 'visible';
+    document.getElementById(`container${ka}`).removeAttribute("style", " visibility:visible; position:absolute;margin-left:2rem");
+    document.getElementById('input').style.display = "block";
+    document.getElementById('Search').setAttribute(
+      "style", "display:block; position:absolute;margin-left:12rem;margin-top:-2rem");
+    document.getElementById("back").style.display = 'none';
+
+  }
+function back2(){
+  location.reload();  
+}
+  function moon() {
+    document.getElementById('moon').innerHTML='Dark Mode';
+    // let moonelem = document.getElementById("moon");
+    // let body = document.querySelector('body');
+    let moonn=document.querySelector('#moon');
+    moonn.classList.toggle('mactive');
+    // body.style.backgroundColor='white';
+    // moonelem.style.color = "black";
+    document.querySelector('.mactive').innerHTML='Light Mode';
+    document.getElementsByClassName('container').style.display='none';
+
+  }
+
+
+  function update(selectedcou){
+    // let bt=`<button onclick="update(this)" >Back</button>`;
+    //   region.insertAdjacentHTML('beforeend',bt);
+    document.getElementById('filterbtn').style.display='block';
+    wrapper.classList.remove('active');
+    let selectbtn = document.getElementById('para');
+    console.log(selectedcou.innerText);
+    selectbtn.innerText = selectedcou.innerText;
+    if (`${selectedcou.innerText}`=='Asia') {
+ for (let k = 1; k <=250; k++) {
+        if (`${datastore[k].region}` != 'Asia') {
+          document.getElementById(`container${k}`).style.display='none';
+}
+else{
+  document.getElementById(`container${k}`).style.display='block';
+ }
+ }
+}
+    else if(`${selectedcou.innerText}` == 'Europe'){
+for (let k = 1; k <=250; k++) {
+        if (`${datastore[k].region}` != 'Europe')
+{
+  document.getElementById(`container${k}`).style.display='none';
+}
+else{
+  document.getElementById(`container${k}`).style.display='block';
+}
+
+    }
+  }
+  else if(`${selectedcou.innerText}` == 'Africa'){
+for (let k = 1; k <=250; k++) {
+        if (`${datastore[k].region}` != 'Africa')
+{
+  document.getElementById(`container${k}`).style.display='none';
+}
+else{
+  document.getElementById(`container${k}`).style.display='block';
+}
+  }}
+  else if(`${selectedcou.innerText}` == 'Americas'){
+for (let k = 1; k <=250; k++) {
+        if (`${datastore[k].region}` != 'Americas')
+{
+  document.getElementById(`container${k}`).style.display='none';
+}
+else{
+  document.getElementById(`container${k}`).style.display='block';
+}
+  }}
+  else if(`${selectedcou.innerText}` == 'Oceania'){
+for (let k = 1; k <=250; k++) {
+        if (`${datastore[k].region}` != 'Oceania')
+{
+  document.getElementById(`container${k}`).style.display='none';
+}
+else{
+  document.getElementById(`container${k}`).style.display='block';
+}
+  }}
+  }
+function countryclick(){
+  // document.getElementById('wrapper').style.visibility='hidden';
+  document.getElementById(`container${index2}`).style.backgroundColor="red";
+  alert('i am here');
+  console.log(index2);
+}
+
+</script>
+</html>

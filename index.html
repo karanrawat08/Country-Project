@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link rel="stylesheet" href="stylesheet.css">
+  <link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+			rel="stylesheet"/>
+<title>Rest Countries</title>
+  
+</head>
+
+<body class="body">
+  <header class="header">
+    <span>
+      <h1>Where in the world?
+        <p id="moon" class="moon" onclick="moon()"><i class="fas fa-moon">&nbsp;	Dark Mode</i></p>
+      </h1>
+    </span>
+  </header><br><br>
+  <button onclick="back()" id="back" class="backclass">Back</button>
+  <button onclick="backagain()" id="backagain" class="backagainclass">Back</button>
+
+  <input type="text" class="inputt" placeholder="Search For a Country"
+    id="input"><i class="uil uil-search Search" id="Search" onclick="search()"></i><br>
+    
+  <span id="filter" class="wrapper">
+    <span id="region"><b id="para">Filter by Region:</b><i class="uil uil-angle-down angel"
+        style="background-color:var(--clr-gray-light)"></i>
+      <div class="option" style="position: absolute">
+      </div>
+    </span>
+  </span>
+  <br><br>
+  <div id="loading"></div>
+
+  <div class="wrapper-grid" id="wrapper">
+
+
+    <div id="container1" class="container"></div>
+    <div id="container2" class="container"></div>
+    <div id="container3" class="container"></div>
+    <div id="container4" class="container"></div>
+    <div id="container5" class="container"></div>
+    <div id="container6" class="container"></div>
+    <div id="container7" class="container"></div>
+    <div id="container8" class="container"></div>
+    <div id="container9" class="container"></div>
+    <div id="container10" class="container"></div>
+    <div id="container11" class="container"></div>
+    <div id="container12" class="container"></div>
+    <div id="container13" class="container"></div>
+    <div id="container14" class="container"></div>
+    <div id="container15" class="container"></div>
+    <div id="container16" class="container"></div>
+    <div id="container17" class="container"></div>
+    <div id="container18" class="container"></div>
+    <div id="container19" class="container"></div>
+    <div id="container20" class="container"></div>
+    <div id="container21" class="container"></div>
+    <div id="container22" class="container"></div>
+    <div id="container23" class="container"></div>
+    <div id="container24" class="container"></div>
+    <div id="container25" class="container"></div>
+    <div id="container26" class="container"></div>
+    <div id="container27" class="container"></div>
+    <div id="container28" class="container"></div>
+    <div id="container29" class="container"></div>
+    <div id="container30" class="container"></div>
+    <div id="container31" class="container"></div>
+    <div id="container32" class="container"></div>
+    <div id="container33" class="container"></div>
+    <div id="container34" class="container"></div>
+    <div id="container35" class="container"></div>
+    <div id="container36" class="container"></div>
+    <div id="container37" class="container"></div>
+    <div id="container38" class="container"></div>
+    <div id="container39" class="container"></div>
+    <div id="container40" class="container"></div>
+    <div id="container41" class="container"></div>
+    <div id="container42" class="container"></div>
+    <div id="container43" class="container"></div>
+    <div id="container44" class="container"></div>
+    <div id="container45" class="container"></div>
+    <div id="container46" class="container"></div>
+    <div id="container47" class="container"></div>
+    <div id="container48" class="container"></div>
+    <div id="container49" class="container"></div>
+    <div id="container50" class="container"></div>
+    <div id="container51" class="container"></div>
+    <div id="container52" class="container"></div>
+    <div id="container53" class="container"></div>
+    <div id="container54" class="container"></div>
+    <div id="container55" class="container"></div>
+    <div id="container56" class="container"></div>
+    <div id="container57" class="container"></div>
+    <div id="container58" class="container"></div>
+    <div id="container59" class="container"></div>
+    <div id="container60" class="container"></div>
+    <div id="container61" class="container"></div>
+    <div id="container62" class="container"></div>
+    <div id="container63" class="container"></div>
+    <div id="container64" class="container"></div>
+    <div id="container65" class="container"></div>
+    <div id="container66" class="container"></div>
+    <div id="container67" class="container"></div>
+    <div id="container68" class="container"></div>
+    <div id="container69" class="container"></div>
+    <div id="container70" class="container"></div>
+    <div id="container71" class="container"></div>
+    <div id="container72" class="container"></div>
+    <div id="container73" class="container"></div>
+    <div id="container74" class="container"></div>
+    <div id="container75" class="container"></div>
+    <div id="container76" class="container"></div>
+    <div id="container77" class="container"></div>
+    <div id="container78" class="container"></div>
+    <div id="container79" class="container"></div>
+    <div id="container80" class="container"></div>
+    <div id="container81" class="container"></div>
+    <div id="container82" class="container"></div>
+    <div id="container83" class="container"></div>
+    <div id="container84" class="container"></div>
+    <div id="container85" class="container"></div>
+    <div id="container86" class="container"></div>
+    <div id="container87" class="container"></div>
+    <div id="container88" class="container"></div>
+    <div id="container89" class="container"></div>
+    <div id="container90" class="container"></div>
+    <div id="container91" class="container"></div>
+    <div id="container92" class="container"></div>
+    <div id="container93" class="container"></div>
+    <div id="container94" class="container"></div>
+    <div id="container95" class="container"></div>
+    <div id="container96" class="container"></div>
+    <div id="container97" class="container"></div>
+    <div id="container98" class="container"></div>
+    <div id="container99" class="container"></div>
+    <div id="container100" class="container"></div>
+    <div id="container101" class="container"></div>
+    <div id="container102" class="container"></div>
+    <div id="container103" class="container"></div>
+    <div id="container104" class="container"></div>
+    <div id="container105" class="container"></div>
+    <div id="container106" class="container"></div>
+    <div id="container107" class="container"></div>
+    <div id="container108" class="container"></div>
+    <div id="container109" class="container"></div>
+    <div id="container110" class="container"></div>
+    <div id="container111" class="container"></div>
+    <div id="container112" class="container"></div>
+    <div id="container113" class="container"></div>
+    <div id="container114" class="container"></div>
+    <div id="container115" class="container"></div>
+    <div id="container116" class="container"></div>
+    <div id="container117" class="container"></div>
+    <div id="container118" class="container"></div>
+    <div id="container119" class="container"></div>
+    <div id="container120" class="container"></div>
+    <div id="container121" class="container"></div>
+    <div id="container122" class="container"></div>
+    <div id="container123" class="container"></div>
+    <div id="container124" class="container"></div>
+    <div id="container125" class="container"></div>
+    <div id="container126" class="container"></div>
+    <div id="container127" class="container"></div>
+    <div id="container128" class="container"></div>
+    <div id="container129" class="container"></div>
+    <div id="container130" class="container"></div>
+    <div id="container131" class="container"></div>
+    <div id="container132" class="container"></div>
+    <div id="container133" class="container"></div>
+    <div id="container134" class="container"></div>
+    <div id="container135" class="container"></div>
+    <div id="container136" class="container"></div>
+    <div id="container137" class="container"></div>
+    <div id="container138" class="container"></div>
+    <div id="container139" class="container"></div>
+    <div id="container140" class="container"></div>
+    <div id="container141" class="container"></div>
+    <div id="container142" class="container"></div>
+    <div id="container143" class="container"></div>
+    <div id="container144" class="container"></div>
+    <div id="container145" class="container"></div>
+    <div id="container146" class="container"></div>
+    <div id="container147" class="container"></div>
+    <div id="container148"  class="container"></div>
+    <div id="container149" class="container"></div>
+    <div id="container150" class="container"></div>
+    <div id="container151" class="container"></div>
+    <div id="container152" class="container"></div>
+    <div id="container153" class="container"></div>
+    <div id="container154" class="container"></div>
+    <div id="container155" class="container"></div>
+    <div id="container156" class="container"></div>
+    <div id="container157" class="container"></div>
+    <div id="container158" class="container"></div>
+    <div id="container159" class="container"></div>
+    <div id="container160" class="container"></div>
+    <div id="container161" class="container"></div>
+    <div id="container162"  class="container"></div>
+    <div id="container163"  class="container"></div>
+    <div id="container164"  class="container"></div>
+    <div id="container165"  class="container"></div>
+    <div id="container166"  class="container"></div>
+    <div id="container167"  class="container"></div>
+    <div id="container168"  class="container"></div>
+    <div id="container169"  class="container"></div>
+    <div id="container170"  class="container"></div>
+    <div id="container171"  class="container"></div>
+    <div id="container172"  class="container"></div>
+    <div id="container173"  class="container"></div>
+    <div id="container174"  class="container"></div>
+    <div id="container175"  class="container"></div>
+    <div id="container176"  class="container"></div>
+    <div id="container177"  class="container"></div>
+    <div id="container178"  class="container"></div>
+    <div id="container179"  class="container"></div>
+    <div id="container180"  class="container"></div>
+    <div id="container181"  class="container"></div>
+    <div id="container182"  class="container"></div>
+    <div id="container183"  class="container"></div>
+    <div id="container184"  class="container"></div>
+    <div id="container185"  class="container"></div>
+    <div id="container186"  class="container"></div>
+    <div id="container187"  class="container"></div>
+    <div id="container188"  class="container"></div>
+    <div id="container189"  class="container"></div>
+    <div id="container190"  class="container"></div>
+    <div id="container191"  class="container"></div>
+    <div id="container192"  class="container"></div>
+    <div id="container193"  class="container"></div>
+    <div id="container194"  class="container"></div>
+    <div id="container195"  class="container"></div>
+    <div id="container196"  class="container"></div>
+    <div id="container197"  class="container"></div>
+    <div id="container198"  class="container"></div>
+    <div id="container199"  class="container"></div>
+    <div id="container200"  class="container"></div>
+    <div id="container201"  class="container"></div>
+    <div id="container202"  class="container"></div>
+    <div id="container203"  class="container"></div>
+    <div id="container204"  class="container"></div>
+    <div id="container205"  class="container"></div>
+    <div id="container206"  class="container"></div>
+    <div id="container207"  class="container"></div>
+    <div id="container208"  class="container"></div>
+    <div id="container209"  class="container"></div>
+    <div id="container210"  class="container"></div>
+    <div id="container211" class="container"></div>
+    <div id="container212" class="container"></div>
+    <div id="container213" class="container"></div>
+    <div id="container214" class="container"></div>
+    <div id="container215" class="container"></div>
+    <div id="container216" class="container"></div>
+    <div id="container217" class="container"></div>
+    <div id="container218" class="container"></div>
+    <div id="container219" class="container"></div>
+    <div id="container220" class="container"></div>
+    <div id="container221" class="container"></div>
+    <div id="container222" class="container"></div>
+    <div id="container223" class="container"></div>
+    <div id="container224" class="container"></div>
+    <div id="container225" class="container"></div>
+    <div id="container226" class="container"></div>
+    <div id="container227" class="container"></div>
+    <div id="container228" class="container"></div>
+    <div id="container229" class="container"></div>
+    <div id="container230" class="container"></div>
+    <div id="container231" class="container"></div>
+    <div id="container232" class="container"></div>
+    <div id="container233" class="container"></div>
+    <div id="container234" class="container"></div>
+    <div id="container235" class="container"></div>
+    <div id="container236" class="container"></div>
+    <div id="container237" class="container"></div>
+    <div id="container238" class="container"></div>
+    <div id="container239" class="container"></div>
+    <div id="container240" class="container"></div>
+    <div id="container241" class="container"></div>
+    <div id="container242" class="container"></div>
+    <div id="container243" class="container"></div>
+    <div id="container244" class="container"></div>
+    <div id="container245" class="container"></div>
+    <div id="container246" class="container"></div>
+    <div id="container247" class="container"></div>
+    <div id="container248" class="container"></div>
+    <div id="container249" class="container"></div>
+    <div id="container250" class="container"></div>
+
+
+  </div>
+</body>
+<script src="app.js">
+  
+
+</script>
+</html>
